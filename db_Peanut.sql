@@ -50,7 +50,6 @@ create table tEntradas(
 	cantidad int not null,
 	unidad numeric(6) not null,
 	idUbicacionAlmacen varchar(10) not null,
-	idEstado int not null,
 	primary key (idEntrada)
 );
 create table tSalidas(
@@ -127,3 +126,7 @@ create table tUbicaciones(
 	updateDate datetime not null,
 	primary key (idUbicaciones)
 );
+
+create view vRegFisicoReal as select sk.idSKUInt, sk.idSKU, (sum(e.cantidad)-sum(s.cantidad)) from tSKU as sk 
+inner join tEntradas as e on sk.idSKUInt = e.idSKUInt
+inner join tSalidas as s on sk.idSKUInt = s.idSKUInt

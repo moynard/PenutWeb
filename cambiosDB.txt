@@ -1,0 +1,13 @@
+-crear una tabla de estado
+-tEntrada:incluir el idEstado correspondiente al id de la tabla de estados.
+-create tPerfiles idPerfil, lectura, escritura, modificacion. 
+-tReferenciaReg quitar fecha, estado.
+-mover de tEntrada/tSalida a tRegMovimientos:
+	registro->tipoDeMovimiento (r/s/h)
+	pedimento->numPedimento
+	notas
+	registoPor->createdBy, createdDate, 	updatedBy, updatedDate.
+-tEntrada/tSalida estado cambiar a idEstado
+-tUbicaciones -> tUbicacionesAlmacen
+-nueva tUbicaciones -> idUbicacioneAlmacen, idEntrada, createdBy, createdDate, updatedBy, updatedDate.
+	

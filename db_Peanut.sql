@@ -126,7 +126,7 @@ create table tUbicaciones(
 	updateDate datetime not null,
 	primary key (idUbicaciones)
 );
-
-create view vRegFisicoReal as select sk.idSKUInt, sk.idSKU, (sum(e.cantidad)-sum(s.cantidad)) from tSKU as sk 
+vregfisicoreal
+create view vRegFisicoReal as select sk.idSKUInt as idInterno, sk.idSKU as idSKY, (sum(e.cantidad)-sum(s.cantidad)) as Cantidad from tSKU as sk 
 inner join tEntradas as e on sk.idSKUInt = e.idSKUInt
-inner join tSalidas as s on sk.idSKUInt = s.idSKUInt
+inner join tSalidas as s on sk.idSKUInt = s.idSKUInt;

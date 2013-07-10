@@ -7,7 +7,7 @@ create table tProveedor(
 	Primary key(idPro)
 );
 create table tSKU(
-	idSKUInt numeric(6) auto_increment,
+	idSKUInt int auto_increment,
 	idSKU varchar(150) not null,
 	nomProducto varchar(70) not null,
 	idProveedor int not null,
@@ -19,7 +19,7 @@ create table tEstado(
 	primary key (idEstado)
 );
 create table tRegMovimientos(
-	idMovimiento numeric(6) auto_increment,
+	idMovimiento int auto_increment,
 	numInterno int not null,
 	numProveedor int not null,
 	numComercial int not null,
@@ -35,14 +35,14 @@ create table tRegMovimientos(
 );
 create table tSalidaTemp(
 	idSalidaTemp int auto_increment,
-	idSKUInt numeric(6) not null,
+	idSKUInt int not null,
 	cantidad numeric(6) not null,
 	primary key (idSalidaTemp)
 );
 create table tEntradas(
-	idEntrada numeric(6) auto_increment,
-	idMovimiento numeric(6) not null,
-	idSKUInt numeric(6) not null,
+	idEntrada int auto_increment,
+	idMovimiento int not null,
+	idSKUInt int not null,
 	lote varchar(150) not null,
 	idEstado int not null,
 	serie varchar(150) not null,
@@ -54,9 +54,9 @@ create table tEntradas(
 	primary key (idEntrada)
 );
 create table tSalidas(
-	idSalida numeric(6) auto_increment,
-	idMovimiento numeric(6) not null,
-	idSKUInt numeric(6) not null,
+	idSalida int auto_increment,
+	idMovimiento int not null,
+	idSKUInt int not null,
 	lote varchar(150) not null,
 	idEstado int not null,
 	serie varchar(150) not null,
@@ -68,7 +68,7 @@ create table tSalidas(
 );
 create table tConverciones (
 	idConvercion int auto_increment,
-	idSKUInt numeric(6) not null,
+	idSKUInt int not null,
 	cantidad int not null,
 	unidad varchar(40) not null,
 	cantidadEquivalente int not null,
@@ -86,7 +86,7 @@ create table tUbicacionesAlmacen(
 	primary key (idUbicacionAlmacen)
 );
 create table tBitacoraCorreo(
-	idBitacoraCorreo numeric(6) auto_increment,
+	idBitacoraCorreo int auto_increment,
 	idMovimiento int not null,
 	remitente varchar(70) not null,
 	destinatario varchar(70) not null,
@@ -100,8 +100,8 @@ create table tAjustesCorreo(
 	puerto int not null
 );
 create table tReferenciaReg(
-	idSalida numeric(6) not null,
-	idEntrada numeric(6) not null
+	idSalida int not null,
+	idEntrada int not null
 );
 create table tUsuarios(
 	idUsuarios int auto_increment,

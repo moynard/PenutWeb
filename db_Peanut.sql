@@ -6,13 +6,6 @@ create table tProveedor(
 	contraseña varchar(70) not null,
 	Primary key(idPro)
 );
-create table tSKU(
-	idSKUInt numeric(6) auto_increment,
-	idSKU varchar(150) not null,
-	nomProducto varchar(70) not null,
-	idProveedor int not null,
-	primary key(idSKUInt)
-);
 create table tEstado(
 	idEstado int,
 	estado varchar(70),

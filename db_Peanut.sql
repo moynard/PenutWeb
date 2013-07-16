@@ -1,4 +1,4 @@
-create database dbProyecto;
+create database dbProyecto2;
 CREATE TABLE `tProveedor`(
 	`idProveedor` INT AUTO_INCREMENT,
 	`descProveedor` VARCHAR(140) NOT NULL,

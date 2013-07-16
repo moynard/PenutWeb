@@ -12,7 +12,7 @@
  */
 class catalogoProductos extends CI_Controller{
     
-    function __construct() {
+    public function __construct() {
         parent::__construct();
         $this->load->model('catalogoProd_Model');
         
@@ -20,13 +20,15 @@ class catalogoProductos extends CI_Controller{
         $this->load->library('class/Proveedor',$data,'proveedor');
     }
     function index(){
-        
         $this->load->view('head');
-        $this->load->view('walcome_vista');
+        $data['datosTabla'] = $this->listarProductos();
+        $this->load->view('walcome_vista',$data);
         $this->load->view('footer');
+        
     }
     function listarProductos(){
-        
+        $datosTabla = $this->proveedor->buscaSusProductos();
+        return $datosTabla;
     }
     
 }

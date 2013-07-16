@@ -6,10 +6,12 @@
         }
         public function index(){
             
-            $this->load->view('head');
+            $this->load->view('head_login');
             $this->load->view("login_view");
             $this->load->view('footer');
         }
+        
+        
         public function volverLogin($param){
             if ( $param == "logueado"){                
                 $data['verificacion']=FALSE;
@@ -18,7 +20,7 @@
                 $data['verificacion']=TRUE;
                 $data['is_loged_in']=FALSE;
             }
-            $this->load->view('head');
+            $this->load->view('head_login');
             $this->load->view('login_view',$data);
             $this->load->view('footer');
         }

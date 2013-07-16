@@ -45,7 +45,6 @@ class usuario {
         }else{
             return FALSE;
         }
-        print_r($data);
     }  
 }
 ?>

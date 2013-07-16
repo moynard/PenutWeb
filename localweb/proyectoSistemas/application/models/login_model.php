@@ -20,9 +20,20 @@ class login_model extends CI_Model{
         $query = $this->db->get_where($tabla,$whereRef);
         
         if($query->num_rows()>0){
-            $data=$query->row_array();
-            $query->free_result();
-            return $data;
+            if($query->num_rows == 1){
+                $data=$query->row_array();
+                $query->free_result();
+
+                return $data;
+            }elseif($query->num_rows > 1){
+                
+                foreach ($query->result_array() as $row) {
+                    $data[]=$row;
+                }   
+                $query->free_result();
+
+                return $data;
+            }
         }else{
             return False;
         } 

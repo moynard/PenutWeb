@@ -62,6 +62,18 @@ class Proveedor {
     public function setPassword($password){
         $this->password = $password;
     }
+    
+    public function buscaSusProductos(){
+        
+        $datos=$this->ci->login_model->extraerDatos('tproducto','idProveedor',  $this->idProveedor);
+        
+        if(!$datos){
+            echo "fallo";
+            return FALSE;
+        }  else {
+            return $datos;
+        }
+    }
 }
 
 ?>

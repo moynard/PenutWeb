@@ -31,6 +31,15 @@ class catalogoProductos extends CI_Controller{
         return $datosTabla;
     }
     
+    public function busquedaFiltrada(){
+        $data['key'] = $this->input->post('key');
+        
+       $data['datosBusqueda']=$this->catalogoProd_Model->busquedaFiltrada('tproducto','descProducto',$data['key']);
+        
+        
+        $this->load->view('tabla',$data);
+    }
+    
 }
 
 ?>

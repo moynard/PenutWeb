@@ -2,6 +2,7 @@
     $this->load->library('table');
     $conta = 0;
 ?>
+
 <div class="row">
     <div class="c12">
         <div class="row">
@@ -17,26 +18,41 @@
     </div>
 </div>
 <div class='g960'>
-    <div class="row">
+    <div class="row space-top">
+        <div class="c12">
+            <?php echo form_open('catalogoProductos/filtro')?>
+            <table>
+                <tr>
+                    <td width="17.5%">
+                        <label>Filtrar por Producto: </label>
+                    </td>
+                    <td width="82.5%">
+                        <input type="text" name="txtBusqueda" id="txtBusqueda" style="width:100%;">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="row" id="dvTabla" name="dvTabla">
         <table>
             <tr>
                 <th> # </th>
-                <th>IdSKU</th>
                 <th>Producto</th>
+                <th>IdSKU</th>
             </tr>
-            <?php foreach ($datosTabla as $key => $list) {?>
+            <?php if(isset($datosTabla)){foreach ($datosTabla as $key => $list) {?>
             <tr>
                 <td>
                     <?php $conta=$conta+1; echo $conta; ?>
                 </td>
                 <td>
-                    <?php echo $list['idSKU']; ?>
-                </td>
-                <td>
                     <?php echo $list['descProducto']; ?>
                 </td>
+                <td>
+                    <?php echo $list['idSKU']; ?>
+                </td>
             </tr>
-            <?php  }  ?>
+            <?php  }}else{ echo "no contiene Productos registrados";}  ?>
         </table> 
     </div>
 </div>

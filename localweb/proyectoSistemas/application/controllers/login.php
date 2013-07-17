@@ -30,7 +30,7 @@
             /*Obtenemos de la vista los valores del formulario 
              * por medio de un POST*/
             $data= $this->input->post();
-            $data['txtPassword'] = md5($data['txtPassword']);
+            $data['txtPassword'] =$data['txtPassword'];
 
             /*Creamos la Instancia de la clase usuario y 
              * realizamos la validación y concidencias.*/

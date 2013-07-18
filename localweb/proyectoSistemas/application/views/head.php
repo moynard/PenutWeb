@@ -10,33 +10,8 @@ and open the template in the editor.
         <title>Bienvenido <?php echo $this->session->userdata('email') ?> </title>
         <link href="<?php echo base_url()?>CSS/ivory.css" rel="stylesheet" type="text/css">
         <!--script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script-->
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js" />
-        <script language="javascript" type="text/javascript">
-            /*$('#txtBusqueda').live('keypress',function(){
-                alert('hola');
-            });/**/
-            
-                /*$('#txtBusqueda').keypress(function(event){
-                    alert('hola');
-                    //var txtBusqueda = $('#txtBusqueda').text();
-                    var hola = "hola";
-                    document.write(hola);
-                    
-                    /*$.ajax({
-                       url:'<?php //echo base_url()?>index.php/catalogoProductos/busquedaFiltrada',
-                       type: 'POST',
-                       datatype: 'html',
-                       data: "txtBusqueda="+txtBusqueda,
-                       success:function(html){
-                            $('#dvTabla').html(html);
-                       }
-                       
-                    });/**/
-                    
-                /*});/**/
-            
-
-        </script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js" ></script>
+        
         <script type="text/javascript">
             $(document).ready(function(){
                $('#txtBusqueda').keyup(function(){

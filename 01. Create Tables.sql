@@ -11,7 +11,8 @@ CREATE TABLE `tProducto`(
 	`idProveedor` INT NOT NULL,
 	`idSKU` VARCHAR(150) NOT NULL,
 	`descProducto` VARCHAR(70) NOT NULL,
-	PRIMARY KEY(`idProducto`)
+	CONSTRAINT pk_ProductoId PRIMARY KEY (`idProducto`),
+	CONSTRAINT fk_tProducto_tProveedor FOREIGN KEY (`idProducto`) REFERENCES tProveedor(`idProveedor`)
 );
 CREATE TABLE `tEstado`(
 	`idEstado` INT NOT NULL,
@@ -89,8 +90,7 @@ CREATE TABLE `tBitacoraCorreo`(
 	`idMovimiento` INT NOT NULL,
 	`remitente` VARCHAR(70) NOT NULL,
 	`destinatario` VARCHAR(70) NOT NULL,
-	`fechaEnvio` DATETIME NOT NULL,
-	PRIMARY KEY (`idBitacoraCorreo`)
+	`fechaEnvio` DATETIME NOT NULL
 );
 CREATE TABLE `tAjustesCorreo`(
 	`usuario` VARCHAR(70) NOT NULL,
@@ -136,12 +136,11 @@ CREATE TABLE `tUbicacion`(
 	CONSTRAINT fk_tUbicacion_tUbicacionAlmacen FOREIGN KEY (`idUbicacion`) REFERENCES tUbicacionAlmacen(`idUbicacion`)
 );
 
-CREATE VIEW `vInventarioReal` AS
-SELECT
-	`pro`.`idProducto` AS `idProducto`, 
-	`pro`.`idSKU` AS `idSKU`,
-	(SUM(`e`.`cantidad`) - SUM(`s`.`cantidad`)) AS `cantidadReal`
-FROM `tProducto` AS `pro` 
-INNER JOIN `tEntradas` AS `e` ON `pro`.`idProducto` = `e`.`idProducto`
-INNER JOIN `tSalidas` AS `s` ON `pro`.`idProducto` = `s`.`idProducto`
+CREATE VIEW `vinventarioreal` AS
+SELECT `pro`.`idProducto` AS `idProducto`,
+	   `pro`.`idSKU` AS `idSKU`,
+	   (SUM(`e`.`cantidad`) - IFNULL(SUM(`s`.`cantidad`),0)) AS `cantidadReal`
+FROM ((`tproducto` `pro`
+JOIN `tentradas` `e` ON((`pro`.`idProducto` = `e`.`idProducto`)))
+LEFT JOIN `tsalidas` `s` ON((`pro`.`idProducto` = `s`.`idProducto`)))
 GROUP BY `pro`.`idProducto`,`pro`.`idSKU`;

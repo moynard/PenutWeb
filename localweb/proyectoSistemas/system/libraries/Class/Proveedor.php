@@ -65,7 +65,7 @@ class Proveedor {
     
     public function buscaSusProductos(){
         
-        $datos=$this->ci->login_model->extraerDatos('tproducto','idProveedor',  $this->idProveedor);
+        $datos=$this->ci->login_model->extraerDatos('vinventarioreal','idProveedor',  $this->idProveedor);
         
         if(!$datos){
             echo "fallo";

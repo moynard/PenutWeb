@@ -8,11 +8,12 @@
 ?>
 
 
-<table>
+<table class="">
     <tr>
         <th> # </th>
         <th>Producto</th>
         <th>IdSKU</th>
+        <th>Cantidad en Existencia</th>
     </tr>
     <?php if(isset($datosBusqueda) && $datosBusqueda != FALSE){ if( isset($datosBusqueda[0])){foreach ($datosBusqueda as $key => $list) {?>
             <tr>
@@ -22,8 +23,11 @@
                 <td>
                     <?php echo $list['descProducto']; ?>
                 </td>
+                    <td>
+                        <?php echo anchor('catalogoProductos/detallesProducto/'.$list['idSKU'],$list['idSKU']); ?>
+                    </td>
                 <td>
-                    <?php echo $list['idSKU']; ?>
+                    <?php echo $list['cantidadReal']; ?>
                 </td>
             </tr>
     <?php  }}else{?>
@@ -34,8 +38,11 @@
                 <td>
                     <?php echo $datosBusqueda['descProducto']; ?>
                 </td>
+                    <td>
+                        <?php echo anchor('catalogoProductos/detallesProducto/'.$datosBusqueda['idSKU'],$datosBusqueda['idSKU']); ?>
+                    </td>
                 <td>
-                    <?php echo $datosBusqueda['idSKU']; ?>
+                    <?php echo $datosBusqueda['cantidadReal']; ?>
                 </td>
             </tr>        
         

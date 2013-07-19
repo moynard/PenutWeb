@@ -1,3 +1,4 @@
+create database dbProyecto2;
 CREATE TABLE `tProveedor`(
 	`idProveedor` INT AUTO_INCREMENT,
 	`descProveedor` VARCHAR(140) NOT NULL,
@@ -86,6 +87,7 @@ CREATE TABLE `tUbicacionAlmacen`(
 	PRIMARY KEY (`idUbicacion`)
 );
 CREATE TABLE `tBitacoraCorreo`(
+	`idBitacoraCorreo` INT AUTO_INCREMENT,
 	`idMovimiento` INT NOT NULL,
 	`remitente` VARCHAR(70) NOT NULL,
 	`destinatario` VARCHAR(70) NOT NULL,
@@ -140,6 +142,8 @@ CREATE VIEW `vInventarioReal` AS
 SELECT
 	`pro`.`idProducto` AS `idProducto`, 
 	`pro`.`idSKU` AS `idSKU`,
+	`pro`.`idProveedor` AS `idProveedor`,
+	`pro`.`descProducto` AS `descProducto`,        
 	(SUM(`e`.`cantidad`) - SUM(`s`.`cantidad`)) AS `cantidadReal`
 FROM `tProducto` AS `pro` 
 INNER JOIN `tEntradas` AS `e` ON `pro`.`idProducto` = `e`.`idProducto`

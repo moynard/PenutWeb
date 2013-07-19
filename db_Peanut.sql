@@ -1,3 +1,4 @@
+create database dbProyecto2;
 CREATE TABLE `tProveedor`(
 	`idProveedor` INT AUTO_INCREMENT,
 	`descProveedor` VARCHAR(140) NOT NULL,
@@ -86,6 +87,7 @@ CREATE TABLE `tUbicacionAlmacen`(
 	PRIMARY KEY (`idUbicacion`)
 );
 CREATE TABLE `tBitacoraCorreo`(
+	`idBitacoraCorreo` INT AUTO_INCREMENT,
 	`idMovimiento` INT NOT NULL,
 	`remitente` VARCHAR(70) NOT NULL,
 	`destinatario` VARCHAR(70) NOT NULL,

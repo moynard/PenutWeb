@@ -744,6 +744,28 @@ table tr.even td{background-color: #fafafa;}
 	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,.3);
 }	
 
+body{
+    background-color: gray;
+}
+
+div#cuerpo{
+    background-color:  white;
+    height: 32em;
+}
+
+div#cabecera{
+    background-color: #464444;
+    height: 5em;
+    box-shadow: 0px 1px 7px 2px white;
+    border-radius: 0 0 7px 7px;
+}
+
+.feature img{
+    higth: auto;
+    max-width: 100%;
+    width: 100%;
+}
+
 /* Media query for 960 Screens - sets nested grids to 100% */
 @media only screen and (max-width:960px){
 	.row .row .c1,.row .row .c2,.row .row .c3,.row .row .c4,.row .row .c5,.row .row .c6,.row .row .c7,.row .row .c8,.row .row .c9,.row .row .c10,.row .row .c11,.row .row .c12,.row .row .c1-5,.row .row .c1-8{width:100%;margin-bottom:20px;margin-left:0px;margin-right:0px; }

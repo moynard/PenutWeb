@@ -27,7 +27,9 @@
                         <?php echo anchor('catalogoProductos/detallesProducto/'.$list['idSKU'],$list['idSKU']); ?>
                     </td>
                 <td>
-                    <?php echo $list['cantidadReal']; ?>
+                            <?php 
+                            		echo $list['cantTotReal'];
+							 ?>
                 </td>
             </tr>
     <?php  }}else{?>
@@ -42,8 +44,9 @@
                         <?php echo anchor('catalogoProductos/detallesProducto/'.$datosBusqueda['idSKU'],$datosBusqueda['idSKU']); ?>
                     </td>
                 <td>
-                    <?php echo $datosBusqueda['cantidadReal']; ?>
-                </td>
+                            <?php 
+                            		echo $datosBusqueda['cantTotReal'];
+							 ?>
             </tr>        
         
    <?php }}else{ ?>

@@ -64,11 +64,10 @@ class Proveedor {
     }
     
     public function buscaSusProductos(){
+	
         
-        $datos=$this->ci->login_model->extraerDatos('vinventarioreal','idProveedor',  $this->idProveedor);
-        
+        $datos=$this->ci->login_model->extraerDatos('vInventarioReal','idProveedor',  $this->idProveedor);
         if(!$datos){
-            echo "fallo";
             return FALSE;
         }  else {
             return $datos;

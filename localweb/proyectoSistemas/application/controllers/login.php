@@ -34,7 +34,7 @@
 
             /*Creamos la Instancia de la clase usuario y 
              * realizamos la validación y concidencias.*/
-            $this->load->library('class/Usuario',$data,'usuario');
+            $this->load->library('Class/usuario',$data,'usuario');
             $datos=$this->usuario->validadExistencia();
             $userdata = $this->session->userdata('email');
             

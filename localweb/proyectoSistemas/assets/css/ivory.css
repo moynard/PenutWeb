@@ -760,10 +760,15 @@ div#cabecera{
     border-radius: 0 0 7px 7px;
 }
 
+
 .feature img{
-    higth: auto;
+	height:auto;
     max-width: 100%;
     width: 100%;
+}
+
+.excel img {
+    width: 50px;
 }
 
 /* Media query for 960 Screens - sets nested grids to 100% */

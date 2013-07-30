@@ -13,11 +13,16 @@
                 <div clss="row"></div>
                 <div class="row">
                     <div class="c4"></div>
-                    <div class="c4" id="login">
-                        <table>
+                    <div class="c4 feature space-top" id="login">
+                        <table ID="tblLogin">
+                        	<tr>
+                        		<td colspan="2">
+                        			<img src="<?php echo base_url()?>assets/img/glmmty.png" />
+                        		</td>
+                        	</tr>
                             <tr>
-                                <th colspan="2">
-                                    <label>Login</label>
+                                <th colspan="2" >
+                                    <label><h5 style="color: white;">WHS Login</h5></label>
                                 </th>
                             </tr>
                             <tr>
